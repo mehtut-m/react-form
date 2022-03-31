@@ -45,7 +45,7 @@ function WithState() {
           passwordMatch(input.password, e.target.value)
         ) {
           setIsValid((prev) => ({ ...prev, [e.target.name]: true }));
-          setIsValid((prev) => ({ ...prev, confirmPassword: true }));
+          setIsValid((prev) => ({ ...prev, password: true }));
         } else {
           setIsValid((prev) => ({ ...prev, [e.target.name]: false }));
         }
