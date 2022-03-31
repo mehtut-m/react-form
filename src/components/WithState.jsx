@@ -17,44 +17,6 @@ function WithState() {
 
   const disable = Object.values(isValid).filter((item) => !item).length === 0;
 
-  // const handleInputChage = (e) => {
-  //   setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-
-  //   // Validate
-  //   if (e.target.name === 'email' && !validEmail(e.target.value)) {
-  //     setIsValid((prev) => ({ ...prev, [e.target.name]: false }));
-  //     // return setIsValid(false);
-  //   } else if (e.target.name === 'email') {
-  //     setIsValid((prev) => ({ ...prev, [e.target.name]: true }));
-  //   }
-  //   if (
-  //     e.target.name === 'password' &&
-  //     (!validPassword(e.target.value) ||
-  //       !passwordMatch(input.confirmPassword, e.target.value))
-  //   ) {
-  //     setIsValid((prev) => ({ ...prev, [e.target.name]: false }));
-  //   } else if (e.target.name === 'password') {
-  //     setIsValid((prev) => ({ ...prev, [e.target.name]: true }));
-  //   }
-
-  //   if (
-  //     e.target.name === 'confirmPassword' &&
-  //     (!validPassword(input.password) ||
-  //       !passwordMatch(input.password, e.target.value))
-  //   ) {
-  //     setIsValid((prev) => ({ ...prev, [e.target.name]: false }));
-  //   } else if (
-  //     e.target.name === 'confirmPassword' &&
-  //     (!validPassword(input.password) ||
-  //       !passwordMatch(input.password, e.target.value))
-  //   ) {
-  //     setIsValid((prev) => ({ ...prev, password: true }));
-  //     setIsValid((prev) => ({ ...prev, [e.target.name]: true }));
-  //   } else if (e.target.name === 'confirmPassword') {
-  //     setIsValid((prev) => ({ ...prev, [e.target.name]: true }));
-  //   }
-  // };
-
   const handleInputChage = (e) => {
     setInput((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     // Validate Email

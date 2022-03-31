@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <WithState />
       {/* <WithRef /> */}
-      {/* <WithAnoterRef /> */}
       {/* <WithFormik /> */}
     </div>
   );
