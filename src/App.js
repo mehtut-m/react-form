@@ -1,7 +1,7 @@
 import WithState from './components/WithState';
 import WithRef from './components/WithRef';
 import WithFormik from './components/WithFormik';
-import WithAnoterRef from './components/WithAnotherRef';
+
 import './App.css';
 
 function App() {
