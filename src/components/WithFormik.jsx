@@ -37,6 +37,15 @@ const WithFormik = () => {
           password: '',
           confirmPassword: '',
         }}
+        validate={(values) => {
+          const error = {};
+          const { email, password, confirmPassword } = values;
+          if (!validEmail(email)) {
+            error.email = 'Invalid Email';
+          } else if (!validPassword(password)) {
+            error.password = 'Invalid Password';
+          }
+        }}
         onSubmit={(values) => {
           // same shape as initial values
           console.log(values);
