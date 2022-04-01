@@ -6,10 +6,11 @@ import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import Grid from '@mui/material/Grid';
 
+import InputLabel from '@mui/material/InputLabel';
 import Button from '@mui/material/Button';
 import Checkbox from '@mui/material/Checkbox';
 
-import { Formik, Field, Form, FieldArray } from 'formik';
+import { Formik, FieldArray } from 'formik';
 import {
   Container,
   FormControl,
@@ -37,6 +38,14 @@ export const WithMUI = () => {
     return error;
   };
 
+  const addPetInfo = (push) => {
+    push({
+      id: Math.random(),
+      name: '',
+      type: '',
+    });
+  };
+
   const title = [
     { titleName: 'นาย', gender: 'MALE' },
     { titleName: 'นาง', gender: 'FEMALE' },
@@ -57,6 +66,7 @@ export const WithMUI = () => {
         validate={validation}
         onSubmit={(values) => {
           console.log(values);
+          alert(JSON.stringify(values));
         }}
       >
         {({
@@ -73,13 +83,14 @@ export const WithMUI = () => {
               component="form"
               noValidate
               onSubmit={handleSubmit}
-              sx={{ py: '1rem' }}
+              sx={{ py: '1rem', textAlign: 'left' }}
             >
               <Grid container rowSpacing={2}>
                 <Grid item xs={12} fontSize="20px">
-                  <Typography variant="h5">Pet Registration</Typography>
+                  <Typography variant="h5">Pet Declaration Form</Typography>
                 </Grid>
                 <Grid item xs={12}>
+                  <InputLabel>Gender</InputLabel>
                   <FormControl fullWidth>
                     <Select
                       onChange={handleChange}
@@ -98,6 +109,7 @@ export const WithMUI = () => {
                 </Grid>
 
                 <Grid item xs={12}>
+                  <InputLabel>Title</InputLabel>
                   <FormControl fullWidth>
                     <Select
                       onChange={handleChange}
@@ -144,11 +156,7 @@ export const WithMUI = () => {
                               onClick={(e) => {
                                 const checked = e.target.checked;
                                 if (checked) {
-                                  push({
-                                    id: Math.random(),
-                                    name: '',
-                                    lastName: '',
-                                  });
+                                  addPetInfo(push);
                                 } else {
                                   setFieldValue('pets', null);
                                 }
@@ -212,13 +220,7 @@ export const WithMUI = () => {
                               type="button"
                               color="primary"
                               variant="outlined"
-                              onClick={() =>
-                                push({
-                                  id: Math.random(),
-                                  name: '',
-                                  type: '',
-                                })
-                              }
+                              onClick={() => addPetInfo(push)}
                               sx={{
                                 mt: '2rem',
                                 width: '100%',
