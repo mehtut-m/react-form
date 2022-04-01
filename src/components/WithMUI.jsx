@@ -18,7 +18,7 @@ import {
   Typography,
 } from '@mui/material';
 
-export const WithField = () => {
+export const WithMUI = () => {
   const validation = (values) => {
     const error = {};
     const { name, pets } = values;
@@ -254,4 +254,4 @@ export const WithField = () => {
   );
 };
 
-export default WithField;
+export default WithMUI;
