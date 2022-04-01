@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { isEmpty } from 'validator';
 
 import TextField from '@mui/material/TextField';
@@ -20,7 +20,7 @@ import {
 } from '@mui/material';
 
 export const WithMUI = () => {
-  const validation = (values) => {
+  const validation = useCallback((values) => {
     const error = {};
     const { name, pets } = values;
 
@@ -36,15 +36,15 @@ export const WithMUI = () => {
       });
     }
     return error;
-  };
+  }, []);
 
-  const addPetInfo = (push) => {
+  const addPetInfo = useCallback((push) => {
     push({
       id: Math.random(),
       name: '',
       type: '',
     });
-  };
+  }, []);
 
   const title = [
     { titleName: 'นาย', gender: 'MALE' },

@@ -4,6 +4,7 @@ import WithFormik from './components/WithFormik';
 
 import './App.css';
 import WithMUI from './components/WithMUI';
+import StepperFormik from './components/StepperFormik';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       {/* <WithRef /> */}
       {/* <WithFormik /> */}
       <WithMUI />
+      {/* <StepperFormik /> */}
     </div>
   );
 }
